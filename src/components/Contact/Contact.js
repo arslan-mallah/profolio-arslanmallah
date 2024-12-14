@@ -134,7 +134,7 @@ const Contact = () => {
                                 <a href="https://github.com/arslan-mallah" rel="noopener noreferrer" target="_blank"><FontAwesomeIcon icon={faGithub} size="2x" /></a>
                             </p>
 
-                            <p className='contact__youtube'>
+                            <p className='contact__instagram'>
                                 <a href="https://www.instagram.com/arslan__mallah/profilecard/?igsh=dGJpenlnenp2bnJs" rel="noopener noreferrer" target="_blank"><FontAwesomeIcon icon={faInstagram} size="2x" /></a>
                             </p>
                         </div>
