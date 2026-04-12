@@ -1,158 +1,140 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 import "../../styles/About/About.scss";
 
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.12 } },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 40, scale: 0.96 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
+};
+
+const aboutCards = [
+  {
+    to: "/about/intro",
+    number: "01",
+    title: "Hello,",
+    badge: "View Intro",
+    content: (
+      <p>
+        <span>Muhammad Arslan</span>
+        Highly passionate full-stack Developer with more than 2 years of
+        experience building web & mobile applications.
+      </p>
+    ),
+  },
+  {
+    to: "/about/experience",
+    number: "02",
+    title: "Experience",
+    badge: "View Experience",
+    content: (
+      <p>
+        <span>2+ years of experience</span>
+        Developing full-stack applications using React.js, Laravel, Node.js,
+        and ERP systems — delivering efficient and scalable web solutions.
+      </p>
+    ),
+  },
+  {
+    to: "/about/internships",
+    number: "03",
+    title: "Internships",
+    badge: "View Internships",
+    content: (
+      <ul>
+        <li><span>eFAIDA Technologies</span> — Front-end Developer</li>
+        <li><span>KK Solutions</span> — Junior Front-end Dev</li>
+        <li><span>Tech Solutions Pro</span> — Front-end Developer</li>
+        <li><span>Samcotec</span> — Full Stack Engineer</li>
+      </ul>
+    ),
+  },
+  {
+    to: "/about/graduation",
+    number: "04",
+    title: "Engineering",
+    badge: "View Education",
+    content: (
+      <p>
+        <span>University of Okara</span>
+        Bachelor of Computer Science (2020–2024). Focused on Web Engineering,
+        OOP, DBMS, Data Structures & Algorithms, and Artificial Intelligence.
+      </p>
+    ),
+  },
+];
+
 const About = () => {
-
   return (
-    <>
-      <div className="about" id="about">
-        <div className="about__container">
-          <div className="about__header" id="about__heading">
-            <h1 data-aos="fade-down" data-aos-delay="0" data-aos-offset="20">
-              <span
-                data-aos="fade-down"
-                data-aos-delay="0"
-                data-aos-offset="200"
-              >
-                A
-              </span>
-              <span
-                data-aos="fade-down"
-                data-aos-delay="200"
-                data-aos-offset="200"
-              >
-                B
-              </span>
-              <span
-                data-aos="fade-down"
-                data-aos-delay="400"
-                data-aos-offset="200"
-              >
-                O
-              </span>
-              <span
-                data-aos="fade-down"
-                data-aos-delay="600"
-                data-aos-offset="200"
-              >
-                U
-              </span>
-              <span
-                data-aos="fade-down"
-                data-aos-delay="800"
-                data-aos-offset="200"
-              >
-                T
-              </span>
-              <span
-                data-aos="fade-down"
-                data-aos-delay="1000"
-                data-aos-offset="200"
-              >
-                .
-              </span>
-            </h1>
-            <p></p>
-          </div>
-
-          <div className="about__details-container">
-            <div
-              className="about__details"
-              data-aos="fade-down"
-              data-aos-offset="0"
-              data-aos-delay="0"
-              data-aos-once="true"
-            >
-              <Link to="/about/intro">
-                <h1>
-                  0<span>1</span>
-                </h1>
-                <h2>
-                  H<span>ello,</span>
-                </h2>
-                <p>
-                  I am <span>Muhammad Arslan.</span> <br /> Highly passoinate
-                  full-stack Developer with more than 2 years of experience.
-                </p>
-              </Link>
-            </div>
-            <div
-              className="about__details"
-              data-aos="fade-down"
-              data-aos-offset="-180"
-              data-aos-delay="200"
-              data-aos-once="true"
-            >
-              <Link to="/about/experience">
-                <h1>
-                  0<span>2</span>
-                </h1>
-                <h2>
-                  E<span>xperience</span>
-                </h2>
-                <p>
-                  <span>2 years of experience.</span>
-                  <br />I have over 2 years of experience developing highly responsive websites using React.js and Node.js, delivering efficient and user-friendly web solutions.
-                </p>
-              </Link>
-            </div>
-            <div
-              className="about__details"
-              data-aos="fade-down"
-              data-aos-offset="50"
-              data-aos-delay="500"
-              data-aos-once="true"
-            >
-              <Link to="/about/internships">
-                <h1>
-                  0<span>3</span>
-                </h1>
-                <h2>
-                  I<span>nternships</span>
-                </h2>
-                <p>
-                  <span>Interned at -</span> <br />
-                </p>
-                <ul>
-                  <li>
-                    <span>eFAIDA Technologies</span> - Internship Front-end Developer{" "}
-                  </li>
-                  <li>
-                    <span>KK Solutions</span> - Junior Front-end Developer{" "}
-                  </li>
-                  <li>
-                    <span>Tech Solutions Pro limited</span> - Front-end Developer{" "}
-                  </li>
-                </ul>
-              </Link>
-            </div>
-            <div
-              className="about__details"
-              data-aos="fade-down"
-              data-aos-offset="-180"
-              data-aos-delay="700"
-              data-aos-once="true"
-            >
-              <Link to="/about/graduation">
-                <h1>
-                  0<span>4</span>
-                </h1>
-                <h2>
-                  E<span>ngineering</span>
-                </h2>
-                <p>
-                  <span>University of Okara </span>
-                  <br />
-                  I completed my Bachelor of Computer Science (2020-2024), focusing on subjects like Web Engineering, OOP, DBMS, Data Structures & Algorithms, and Artificial Intelligence, building a strong foundation in computer science and software development.
-                </p>
-              </Link>
-            </div>
-          </div>
+    <div className="about" id="about">
+      <div className="about__container">
+        {/* Header */}
+        <div className="about__header" id="about__heading">
+          <motion.span
+            className="section-label"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5 }}
+          >
+            Who I Am
+          </motion.span>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            {["A","B","O","U","T"].map((l, i) => <span key={i}>{l}</span>)}
+            <span style={{ background: "none", WebkitTextFillColor: "#ffffff" }}>.</span>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            Passionate full-stack developer crafting elegant, scalable digital experiences.
+          </motion.p>
         </div>
+
+        {/* Cards */}
+        <motion.div
+          className="about__details-container"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
+          {aboutCards.map((card) => (
+            <motion.div
+              key={card.number}
+              className="about__details"
+              variants={cardVariants}
+              whileHover={{ y: -8, scale: 1.02, transition: { duration: 0.25 } }}
+            >
+              <Link to={card.to}>
+                <span className="about__card-number">{card.number}</span>
+                <h2>{card.title}</h2>
+                {card.content}
+                <span className="about__card-badge">{card.badge}</span>
+              </Link>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
-    </>
+    </div>
   );
 };
 

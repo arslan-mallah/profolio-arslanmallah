@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 import '../../styles/Works/Works.scss';
 
@@ -9,67 +10,45 @@ import ProjectCard from '../ProjectCard';
 
 const Works = () => {
   return (
-    <>
-      <div className="works" id="work">
-        <div className="works__container">
-          <div className="works__header" id="works__heading">
-            <h1 data-aos="fade-down">
-              <span
-                data-aos="fade-down"
-                data-aos-delay="0"
-                data-aos-offset="200"
-              >
-                W
-              </span>
-              <span
-                data-aos="fade-down"
-                data-aos-delay="200"
-                data-aos-offset="200"
-              >
-                O
-              </span>
-              <span
-                data-aos="fade-down"
-                data-aos-delay="400"
-                data-aos-offset="200"
-              >
-                R
-              </span>
-              <span
-                data-aos="fade-down"
-                data-aos-delay="600"
-                data-aos-offset="200"
-              >
-                K
-              </span>
-              <span
-                data-aos="fade-down"
-                data-aos-delay="800"
-                data-aos-offset="200"
-              >
-                S
-              </span>
-              <span
-                data-aos="fade-down"
-                data-aos-delay="1000"
-                data-aos-offset="200"
-              >
-                .
-              </span>
-            </h1>
-            <p></p>
-          </div>
-          <div className="works__grid">
-            <div className="works__grid-container">
-              {data.portfolio.projectCard.cards.map((content) => (
-                // Each project cards 
-                <ProjectCard key={content.heading} cardContent={content} />
-              ))}
-            </div>
+    <div className="works" id="work">
+      <div className="works__container">
+        <div className="works__header" id="works__heading">
+          <motion.span
+            className="section-label"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5 }}
+          >
+            Featured Projects
+          </motion.span>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            {['W','O','R','K','S'].map((l, i) => <span key={i}>{l}</span>)}
+            <span style={{ background: 'none', WebkitTextFillColor: '#ffffff' }}>.</span>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            A collection of projects I've built for clients and companies across different industries.
+          </motion.p>
+        </div>
+        <div className="works__grid">
+          <div className="works__grid-container">
+            {data.portfolio.projectCard.cards.map((content, i) => (
+              <ProjectCard key={content.heading} cardContent={content} index={i} />
+            ))}
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -1,0 +1,18 @@
+// ── Global layout ──────────────────────────────────────────────────────────
+// IMPORTANT: overflow:hidden on any ancestor BREAKS position:sticky.
+// Use overflow-x:clip instead — it clips visually without creating
+// a new scroll container, so sticky keeps working.
+html {
+  overflow-x: clip;
+}
+
+body {
+  overflow-x: clip;
+  position: relative;
+}
+
+// Prevent any section from causing horizontal scroll
+section, div {
+  max-width: 100%;
+  box-sizing: border-box;
+}

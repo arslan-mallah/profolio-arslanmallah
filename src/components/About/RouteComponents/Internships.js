@@ -6,6 +6,7 @@ import '../../../styles/About/Route/Internships.scss'
 import Internship from '../../Internship';
 
 import data from '../../../data'
+import BackButton from './BackButton'
 
 const Internships = () => {
     return (
@@ -13,8 +14,9 @@ const Internships = () => {
             <div className="internships">
                 <div className="internships__container">
                     <div className="internships__header">
+                        <span className="route-label">Work History</span>
                         <h2 className="internships__number">0<span>3</span></h2>
-                        <h1 data-aos='fade-down' data-aos-offset="0">I<span>nternships</span>.</h1>
+                        <h1 data-aos='fade-up' data-aos-offset="0">I<span>nternships</span>.</h1>
                     </div>
                     <div className="internships__description">
                         <div className="internships__main-box">
@@ -23,6 +25,7 @@ const Internships = () => {
                             ))}
                         </div>
                     </div>
+                    <BackButton />
                 </div>
             </div>
         </>

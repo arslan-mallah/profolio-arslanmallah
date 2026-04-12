@@ -1,184 +1,179 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 .experience {
   position: relative;
-  top: 0;
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  background: #030712;
+  color: #e2e8f0;
+  overflow-x: hidden;
 
   &__container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 5em 6%;
     position: relative;
-    top: 0;
-    padding: 2em;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
 
   &__header {
-    font-family: 'RedWingBold';
+    margin-bottom: 3em;
+    position: relative;
 
-    h2 {
-      margin-top: 5%;
-      margin-left: 5%;
-      letter-spacing: 0.1em;
-      font-size: 8em;
-      font-weight: 900;
-      z-index: 1;
-      color: #212020;
-
-      span {
-        -webkit-text-stroke: 1px #212020;
-        color: #000000;
-      }
+    .route-label {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78em;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #7c3aed;
+      margin-bottom: 0.6em;
     }
 
+    h2 { display: none; }
+
     h1 {
-      font-size: 9vw;
-      color: #ffffffe8;
-      margin-left: 9%;
-      margin-top: -15%;
-      letter-spacing: 0.05em;
+      font-family: 'RedWingBold';
+      font-size: 3em;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #ffffff;
+
+      span {
+        background: linear-gradient(135deg, #00ffff, #7c3aed);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
     }
   }
 
   &__description {
     position: relative;
-    padding-top: 10%;
-    margin-left: 5%;
-    color: #ffffff;
-    font-weight: lighter;
-    max-width: 50vw;
-    padding-right: 5%;
-    line-height: 1.5;
   }
 
   &__main-box {
-    max-height: 60vh;
-    overflow-y: scroll;
-    padding-left: 2em;
-    padding-right: 5%;
-  }
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    position: relative;
+    padding-left: 0;
 
-  &__main-box::-webkit-scrollbar {
-    height: 0.15em;
-    width: 0.15em;
-  }
-
-  /* Track */
-  &__main-box::-webkit-scrollbar-track {
-    background: #ffffffb5;
-  }
-
-  /* Handle */
-  &__main-box::-webkit-scrollbar-thumb {
-    background: #888;
-  }
-
-  /* Handle on hover */
-  &__main-box::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-
-  &__main-box::-webkit-scrollbar-thumb:vertical {
-    background: #00ffff;
-    border-radius: 10px;
+    // Timeline line
+    &::before {
+      content: '';
+      position: absolute;
+      left: 14px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(180deg, #00ffff, #7c3aed, transparent);
+    }
   }
 
   &__box {
-    margin-bottom: 3em;
-    h2 {
-      font-family: 'RedWingLight';
-      letter-spacing: 0.1em;
+    position: relative;
+    background: #0d1117;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 1.8em 2em 1.8em 3em;
+    margin-left: 2em;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+
+    // Timeline dot
+    &::before {
+      content: '';
+      position: absolute;
+      left: -2.4em;
+      top: 1.8em;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #00ffff;
+      box-shadow: 0 0 10px rgba(0,255,255,0.5);
+      border: 2px solid #030712;
     }
+
+    &:hover {
+      border-color: rgba(0,255,255,0.2);
+      transform: translateX(4px);
+    }
+
+    h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8em;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #64748b;
+      margin-bottom: 0.5em;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+
+      svg { color: #7c3aed; font-size: 1em; }
+    }
+
     h3 {
-      font-family: 'RedWingLight';
-      font-weight: 400;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78em;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #00ffff;
+      margin-bottom: 1em;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+
+      svg { color: #00ffff; }
     }
 
     ul {
-      margin-top: 1em;
-      p {
-        margin-bottom: 0.5em;
-      }
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6em;
+
+      p { display: none; }
 
       li {
-        color: #00ffff;
-        margin-bottom: 0.5em;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.6em;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.9em;
+        font-weight: 300;
+        color: #94a3b8;
+        line-height: 1.6;
+
+        &::before {
+          content: '▸';
+          color: #00ffff;
+          font-size: 0.8em;
+          flex-shrink: 0;
+          margin-top: 0.2em;
+        }
+
         span {
-          color: #ffffff;
+          color: #cbd5e1;
+          b { font-weight: 600; color: #e2e8f0; }
         }
-        span:empty {
-          display: none;
-        }
+
+        span:empty { display: none; }
       }
     }
   }
 
-  &__box:nth-child(3) {
-    ul {
-      li:nth-child(n + 3) {
-        display: none;
-      }
-    }
-  }
+  &__calendar { color: #7c3aed; }
 
-  &__calendar {
-    color: #00ffff;
-  }
-
-  @media screen and (max-width: 998px) {
-    &__container {
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-    }
-
-    &__header {
-      h2 {
-        font-size: 5em;
-        margin-left: 0;
-      }
-
-      h1 {
-        font-size: 5em;
-        margin-left: 3%;
-      }
-    }
-
-    &__main-box {
-      padding-left: 0;
-    }
-
-    &__box ul {
-      list-style-position: inside;
-    }
-
-    &__description {
-      padding-top: 3%;
-      margin-top: 4em;
-      margin-left: 0;
-      padding-right: 0;
-      max-width: 100%;
-    }
-  }
-
-  @media screen and (max-width: 698px) {
-    &__header {
-      h1 {
-        margin-top: -1em;
-        font-size: 3.5em;
-      }
-    }
-
-    &__box {
-      h2 {
-        font-size: 1.3em;
-      }
-      h3 {
-        font-size: 1em;
-      }
-    }
+  @media screen and (max-width: 768px) {
+    &__container { padding: 4em 5%; }
+    &__header h1 { font-size: 2em; }
+    &__main-box { padding-left: 0; &::before { left: 8px; } }
+    &__box { padding: 1.4em 1.4em 1.4em 2.5em; margin-left: 1.5em; }
   }
 }

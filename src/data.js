@@ -48,7 +48,15 @@ export const config = {
           animationDelay: '1300',
           buttonLink: 'https://thecottageco.netlify.app/',
           buttonText: 'CHECK OUT',
-        },      
+        },
+        {
+          heading: 'eCAR',
+          description:
+            '"eCAR" is a Saudi Arabia-based ERP (Enterprise Resource Planning) system designed to streamline and automate business operations. Built to handle complex organizational workflows, it offers a comprehensive solution for managing resources, processes, and data efficiently across departments.',
+          animationDelay: '1500',
+          buttonLink: 'https://samcotec.com/ar/',
+          buttonText: 'CHECK OUT',
+        },
       ],
     },
     internships: {
@@ -82,9 +90,20 @@ export const config = {
           companyName: 'Tech Solutions Pro',
           role: 'Front-end Developer',
           introText: '',
-          duration: 'AUG 2024 - PRESENT',
+          duration: 'AUG 2024 - MAR 2025',
           keyPointOne:
             'Developed live projects, addressing real-world problem-solving challenges and optimizing solutions for efficiency.',
+          offsetValue: '-1000',
+        },
+        {
+          companyName: 'Samcotec',
+          role: 'Full Stack Engineer',
+          introText: '',
+          duration: 'APR 2025 - PRESENT',
+          keyPointOne: 'Working as an Associate Software Engineer on ERP-based systems including eCAR, a Saudi Arabia-based enterprise resource planning platform.',
+          keyPointTwo: 'Developing and maintaining scalable frontend and backend features using modern web technologies.',
+          keyPointThree: 'Collaborating with cross-functional teams to deliver high-quality software solutions for Saudi Arabian clients.',
+          keyPointFour: 'Integrating REST APIs and optimizing application performance for enterprise-level systems.',
           offsetValue: '-1000',
         },
       ],
