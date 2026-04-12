@@ -53,10 +53,10 @@ const aboutCards = [
     badge: "View Internships",
     content: (
       <ul>
-        <li><span>eFAIDA Technologies</span> — Front-end Developer</li>
-        <li><span>KK Solutions</span> — Junior Front-end Dev</li>
-        <li><span>Tech Solutions Pro</span> — Front-end Developer</li>
-        <li><span>Samcotec</span> — Full Stack Engineer</li>
+        <li><span>eFAIDA Technologies</span><small>Front-end Developer</small></li>
+        <li><span>KK Solutions</span><small>Junior Front-end Dev</small></li>
+        <li><span>Tech Solutions Pro</span><small>Front-end Developer</small></li>
+        <li><span>Samcotec</span><small>Full Stack Engineer</small></li>
       </ul>
     ),
   },
