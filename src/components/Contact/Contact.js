@@ -4,7 +4,6 @@ import emailjs from '@emailjs/browser';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot, faPhone, faEnvelope, faSquareCheck } from '@fortawesome/free-solid-svg-icons';
-import { faLinkedin, faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 import '../../styles/Contact/Contact.scss';
 
@@ -21,12 +20,6 @@ const infoItems = [
   { icon: faLocationDot, label: 'Location', value: 'Riyadh, Saudi Arabia' },
   { icon: faPhone,       label: 'Phone',    value: '(+966) 53 083 0447' },
   { icon: faEnvelope,    label: 'Email',    value: 'arslanmallah999@gmail.com' },
-];
-
-const socialLinks = [
-  { icon: faLinkedin,  href: 'https://www.linkedin.com/in/arslan-mallah/',                                      className: 'contact__linkedin'  },
-  { icon: faGithub,    href: 'https://github.com/arslan-mallah',                                                 className: 'contact__github'    },
-  { icon: faInstagram, href: 'https://www.instagram.com/arslan__mallah/profilecard/?igsh=dGJpenlnenp2bnJs',     className: 'contact__instagram' },
 ];
 
 const Contact = () => {
@@ -211,22 +204,7 @@ const Contact = () => {
             </ul>
           </div>
 
-          <div className="contact__social">
-            {socialLinks.map((s, i) => (
-              <p key={i} className={s.className}>
-                <motion.a
-                  href={s.href}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  whileHover={{ scale: 1.15, y: -3 }}
-                  whileTap={{ scale: 0.9 }}
-                  transition={{ type: 'spring', stiffness: 300 }}
-                >
-                  <FontAwesomeIcon icon={s.icon} />
-                </motion.a>
-              </p>
-            ))}
-          </div>
+
         </motion.div>
       </div>
     </div>
