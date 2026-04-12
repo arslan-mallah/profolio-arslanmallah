@@ -38,10 +38,18 @@ const Contact = () => {
     e.preventDefault();
     setSending(true);
     setStatus('');
+
+    const formData = new FormData(formRef.current);
+    const templateParams = {
+      name:  formData.get('from_name')  || '',
+      email: formData.get('from_email') || '',
+      title: formData.get('message')    || '',
+    };
+
     emailjs
-      .sendForm('service_6o4srbn', 'template_ais8y7q', formRef.current, 'VPC-Dijre1Ltay59L')
+      .send('service_6o4srbn', 'template_ais8y7q', templateParams)
       .then(() => { setStatus('success'); setSending(false); formRef.current.reset(); })
-      .catch(() => { setStatus('error'); setSending(false); });
+      .catch((err) => { console.error('EmailJS error:', err); setStatus('error'); setSending(false); });
   };
 
   return (
@@ -117,6 +125,7 @@ const Contact = () => {
                   id="contact__message"
                   rows="5"
                   placeholder="Tell me about your project..."
+                  required
                 />
               </motion.p>
 
