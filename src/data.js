@@ -93,6 +93,9 @@ export const config = {
           duration: 'AUG 2024 - MAR 2025',
           keyPointOne:
             'Developed live projects, addressing real-world problem-solving challenges and optimizing solutions for efficiency.',
+          keyPointTwo: 'Built and maintained responsive user interfaces using React.js, ensuring cross-browser compatibility and optimal performance.',
+          keyPointThree: 'Collaborated with designers and back-end developers to translate UI/UX designs into functional web applications.',
+          keyPointFour: 'Implemented best coding practices including code reviews, version control with Git, and component-based architecture.',
           offsetValue: '-1000',
         },
         {
