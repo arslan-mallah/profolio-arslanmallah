@@ -299,7 +299,7 @@ const Hero = () => {
                 full-stack developer
               </motion.span>
               , with more than{' '}
-              <span className="hero__highlight">2 years</span> of experience.
+              <span className="hero__highlight">3 years</span> of experience.
               Skilled in developing highly responsive websites and mobile apps
               with elegant and efficient code.
             </p>
@@ -340,7 +340,7 @@ const Hero = () => {
           {/* Stats */}
           <motion.div className="hero__stats" variants={itemVariants}>
             {[
-              { value: '2+', label: 'Years Experience' },
+              { value: '3+', label: 'Years Experience' },
               { value: '15+', label: 'Projects Delivered' },
               { value: '5+', label: 'Happy Clients' },
             ].map((stat, i) => (

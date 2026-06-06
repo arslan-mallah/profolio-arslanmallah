@@ -22,7 +22,7 @@ const Experience = () => {
                                 <h3><FontAwesomeIcon icon={faCalendarDays} className="experience__calendar" />&nbsp; &nbsp;01/06/2022 - PRESENT</h3>
                                 <ul>
                                     <li data-aos='fade-right' data-aos-delay='200'>
-                                        <span>Over 2 years of professional experience as a Full Stack Developer specializing in React.js, Laravel, Node.js, and ERP systems.</span>
+                                        <span>Over 3 years of professional experience as a Full Stack Developer specializing in React.js, Laravel, Node.js, and ERP systems.</span>
                                     </li>
                                     <li data-aos='fade-right' data-aos-delay='400'>
                                         <span>Currently working as an <b>Associate Software Engineer at Samcotec</b>, developing Saudi Arabia-based ERP solutions.</span>

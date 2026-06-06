@@ -19,7 +19,7 @@ const Intro = () => {
                             I am a passionate web developer with a keen interest in creating innovative and dynamic web solutions.
                         </p>
                         <p data-aos="fade-up" data-aos-delay="100">
-                            I specialize in building responsive and adaptive websites with more than 2 years of experience working with modern front-end technologies like React and Next.js.
+                            I specialize in building responsive and adaptive websites with more than 3 years of experience working with modern front-end technologies like React and Next.js.
                         </p>
                         <p data-aos="fade-up" data-aos-delay="200">
                             I am enthusiastic about developing user-friendly front-end features and bringing designs to life with clean, efficient code.
