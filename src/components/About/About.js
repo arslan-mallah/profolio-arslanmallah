@@ -28,7 +28,7 @@ const aboutCards = [
     content: (
       <p>
         <span>Muhammad Arslan</span>
-        Highly passionate full-stack Developer with more than 2 years of
+        Highly passionate full-stack Developer with more than 3 years of
         experience building web & mobile applications.
       </p>
     ),
@@ -40,7 +40,7 @@ const aboutCards = [
     badge: "View Experience",
     content: (
       <p>
-        <span>2+ years of experience</span>
+        <span>3+ years of experience</span>
         Developing full-stack applications using React.js, Laravel, Node.js,
         and ERP systems — delivering efficient and scalable web solutions.
       </p>
