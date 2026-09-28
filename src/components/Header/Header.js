@@ -14,6 +14,7 @@ import '../../styles/Header/Header.scss';
 import logoImage from '../../assets/logo/logo.png';
 
 const navLinks = [
+  { label: 'Home',    href: '#hero',    sectionId: 'hero'    },
   { label: 'About',   href: '#about',   sectionId: 'about'   },
   { label: 'Works',   href: '#work',    sectionId: 'work'    },
   { label: 'Contact', href: '#contact', sectionId: 'contact' },
@@ -89,6 +90,22 @@ const Header = () => {
   // ── Mobile menu ────────────────────────────────────────────────────────
   const toggleMenu = () => setMenuOpen((v) => !v);
 
+  const handleNavClick = (e, link) => {
+    e.preventDefault();
+    setActiveLink(link.href);
+    setMenuOpen(false);
+
+    requestAnimationFrame(() => {
+      if (link.sectionId === 'hero') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+
+      const el = document.getElementById(link.sectionId);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  };
+
   const mobileMenuVariants = {
     hidden: { opacity: 0, y: -20, height: 0 },
     visible: { opacity: 1, y: 0, height: 'auto', transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] } },
@@ -133,12 +150,7 @@ const Header = () => {
                     <a
                       href={link.href}
                       className={isActive ? 'active' : ''}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setActiveLink(link.href);
-                        const el = document.getElementById(link.sectionId);
-                        if (el) el.scrollIntoView({ behavior: 'smooth' });
-                      }}
+                      onClick={(e) => handleNavClick(e, link)}
                     >
                       {link.label}
                     </a>
@@ -252,13 +264,7 @@ const Header = () => {
                 key={link.label}
                 href={link.href}
                 className={`header__mobile-link${activeLink === link.href ? ' active' : ''}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setActiveLink(link.href);
-                  setMenuOpen(false);
-                  const el = document.getElementById(link.sectionId);
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
-                }}
+                onClick={(e) => handleNavClick(e, link)}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.07 }}
