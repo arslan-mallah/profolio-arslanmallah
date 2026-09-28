@@ -8,10 +8,11 @@ const skillGroups = [
     category: 'Hard Skills',
     color: '#00ffff',
     items: [
-      { label: 'Languages', skills: ['PHP (Advanced)', 'JavaScript (Advanced)', 'HTML5 / CSS3', 'TypeScript'] },
+      { label: 'Languages', skills: ['PHP (Advanced)', 'JavaScript (Advanced)', 'Python', 'HTML5 / CSS3', 'TypeScript'] },
       { label: 'Frameworks & Libraries', skills: ['React.js / Next.js / React Native', 'Node.js / Express.js', 'Laravel', 'Bootstrap / Tailwind / MUI'] },
       { label: 'Databases', skills: ['MySQL', 'MongoDB'] },
-      { label: 'Tools', skills: ['GIT / GitHub', 'REST API', 'WordPress', 'SASS / SCSS'] },
+      { label: 'Tools & Platforms', skills: ['GIT / GitHub', 'REST API', 'WordPress', 'SASS / SCSS', 'SaaS Applications'] },
+      { label: 'IT Operations', skills: ['Linux', 'Telecom Networking', 'IT Support'] },
     ],
   },
   {
@@ -47,7 +48,7 @@ const Skill = () => {
       'HTML5','CSS3','SASS','JavaScript','React.js','React Native',
       'Next.js','Bootstrap','Tailwind','MUI','Node.js','Express.js',
       'MongoDB','MySQL','WordPress','Laravel','PHP','jQuery','ES6',
-      'GIT','REST API','TypeScript',
+      'GIT','REST API','TypeScript','Python','SaaS','Linux','Telecom Networking','IT Support',
     ];
 
     const getRadius = () => {

@@ -19,6 +19,7 @@ import Intro from './components/About/RouteComponents/Intro';
 import Experience from './components/About/RouteComponents/Experience';
 import Internships from './components/About/RouteComponents/Internships';
 import Graduation from './components/About/RouteComponents/Graduation';
+import './theme.scss';
 
 // ── Advanced Custom Cursor ────────────────────────────────────────────────────
 const CustomCursor = () => {
@@ -108,9 +109,9 @@ const CustomCursor = () => {
 
   const ringSize   = cursorState === 'hover' ? 52 : cursorState === 'click' ? 24 : cursorState === 'text' ? 4 : 36;
   const dotSize    = cursorState === 'text'  ? 20 :  cursorState === 'hover' ? 6 : 10;
-  const ringColor  = cursorState === 'hover' ? 'rgba(0,255,255,0.6)' : cursorState === 'click' ? 'rgba(124,58,237,0.8)' : 'rgba(0,255,255,0.35)';
-  const ringBg     = cursorState === 'hover' ? 'rgba(0,255,255,0.06)' : 'transparent';
-  const dotColor   = cursorState === 'text'  ? 'rgba(0,255,255,0.25)' : '#00ffff';
+  const ringColor  = cursorState === 'hover' ? 'var(--cursor-ring-hover)' : cursorState === 'click' ? 'var(--cursor-ring-click)' : 'var(--cursor-ring)';
+  const ringBg     = cursorState === 'hover' ? 'var(--cursor-ring-bg)' : 'transparent';
+  const dotColor   = cursorState === 'text'  ? 'var(--cursor-dot-text)' : 'var(--cursor-dot)';
 
   return (
     <>

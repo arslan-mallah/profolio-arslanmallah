@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Import font awesome package 
@@ -8,12 +8,10 @@ import {
   faGithub,
   faInstagram,
 } from '@fortawesome/free-brands-svg-icons';
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 
 import '../../styles/Header/Header.scss';
-
-const FULL_NAME = 'ArslanMallah';
-const TYPE_SPEED = 220;   // ms per letter — aur aahista
-const PAUSE_AFTER = 20000; // 20 seconds pause then restart
+import logoImage from '../../assets/logo/logo.png';
 
 const navLinks = [
   { label: 'About',   href: '#about',   sectionId: 'about'   },
@@ -30,30 +28,20 @@ const socialLinks = [
 const Header = () => {
   const [scrolled, setScrolled]     = useState(false);
   const [menuOpen, setMenuOpen]     = useState(false);
-  const [displayed, setDisplayed]   = useState('');
   const [activeLink, setActiveLink] = useState('');
-  const timeoutRef = useRef(null);
-
-  // ── Typewriter ─────────────────────────────────────────────────────────
-  const startTyping = useCallback(() => {
-    let i = 0;
-    setDisplayed('');
-    const type = () => {
-      i++;
-      setDisplayed(FULL_NAME.slice(0, i));
-      if (i < FULL_NAME.length) {
-        timeoutRef.current = setTimeout(type, TYPE_SPEED);
-      } else {
-        timeoutRef.current = setTimeout(startTyping, PAUSE_AFTER);
-      }
-    };
-    timeoutRef.current = setTimeout(type, TYPE_SPEED);
-  }, []);
+  const [theme, setTheme] = useState(() => {
+    if (typeof window === 'undefined') return 'light';
+    return window.localStorage.getItem('portfolio-theme') || 'light';
+  });
 
   useEffect(() => {
-    startTyping();
-    return () => clearTimeout(timeoutRef.current);
-  }, [startTyping]);
+    document.body.setAttribute('data-theme', theme);
+    window.localStorage.setItem('portfolio-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((currentTheme) => (currentTheme === 'light' ? 'dark' : 'light'));
+  };
 
   // ── Scroll: header shrink + active section via IntersectionObserver ───
   useEffect(() => {
@@ -124,7 +112,8 @@ const Header = () => {
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.97 }}
         >
-          <span className="header__logo-text">{displayed}</span>
+          <img className="header__logo-image" src={logoImage} alt="Arslan Mallah" />
+          <span className="header__logo-text">ArslanMallah</span>
         </motion.a>
 
         {/* Desktop nav */}
@@ -187,9 +176,42 @@ const Header = () => {
                   </motion.a>
                 </p>
               ))}
+              <motion.button
+                type="button"
+                className={`header__theme-toggle header__theme-toggle--${theme}`}
+                aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+                onClick={toggleTheme}
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.94 }}
+                transition={{ type: 'spring', stiffness: 320, damping: 20 }}
+              >
+                <motion.span
+                  className="header__theme-orb"
+                  layout
+                  transition={{ type: 'spring', stiffness: 420, damping: 28 }}
+                >
+                  <FontAwesomeIcon icon={theme === 'light' ? faSun : faMoon} />
+                </motion.span>
+              </motion.button>
             </motion.div>
           </ul>
         </div>
+
+        <motion.button
+          type="button"
+          className={`header__theme-toggle header__theme-toggle--mobile header__theme-toggle--${theme}`}
+          aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+          onClick={toggleTheme}
+          whileTap={{ scale: 0.94 }}
+        >
+          <motion.span
+            className="header__theme-orb"
+            layout
+            transition={{ type: 'spring', stiffness: 420, damping: 28 }}
+          >
+            <FontAwesomeIcon icon={theme === 'light' ? faSun : faMoon} />
+          </motion.span>
+        </motion.button>
 
         {/* Hamburger */}
         <motion.div

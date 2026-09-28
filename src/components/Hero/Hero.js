@@ -13,8 +13,10 @@ const StarfieldCanvas = () => {
     let animId;
 
     const resize = () => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = canvas.offsetWidth * dpr;
+      canvas.height = canvas.offsetHeight * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
     resize();
     window.addEventListener('resize', resize);
@@ -22,17 +24,17 @@ const StarfieldCanvas = () => {
     // ── Static stars ──────────────────────────────────────────────────────
     const NUM_STARS = 280;
     const stars = Array.from({ length: NUM_STARS }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
+      x: Math.random() * canvas.offsetWidth,
+      y: Math.random() * canvas.offsetHeight,
       r: Math.random() * 0.9 + 0.15,          // smaller & sharper
       baseAlpha: Math.random() * 0.85 + 0.15,
       alpha: 0,
       twinkleSpeed: Math.random() * 0.01 + 0.003,
       twinkleOffset: Math.random() * Math.PI * 2,
       color: Math.random() < 0.15
-        ? `rgba(100,140,255,`    // cool blue stars (rare)
+        ? `rgba(34,197,94,`      // soft green stars (rare)
         : Math.random() < 0.1
-          ? `rgba(180,200,255,`  // pale blue-white (rare)
+          ? `rgba(198,246,213,`  // pale green-white (rare)
           : `rgba(255,255,255,`  // crisp white stars (majority)
     }));
 
@@ -41,8 +43,8 @@ const StarfieldCanvas = () => {
     const shooters = [];
 
     const spawnShooter = () => ({
-      x: Math.random() * canvas.width * 0.8,
-      y: Math.random() * canvas.height * 0.4,
+      x: Math.random() * canvas.offsetWidth * 0.8,
+      y: Math.random() * canvas.offsetHeight * 0.4,
       len: Math.random() * 180 + 80,
       speed: Math.random() * 8 + 5,
       angle: Math.PI / 5 + Math.random() * 0.3,
@@ -63,8 +65,27 @@ const StarfieldCanvas = () => {
     let t = 0;
 
     const draw = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const width = canvas.offsetWidth;
+      const height = canvas.offsetHeight;
+      ctx.clearRect(0, 0, width, height);
       t += 0.016;
+
+      const galaxyCore = ctx.createRadialGradient(width * 0.68, height * 0.28, 0, width * 0.68, height * 0.28, width * 0.48);
+      galaxyCore.addColorStop(0, 'rgba(34, 197, 94, 0.16)');
+      galaxyCore.addColorStop(0.22, 'rgba(15, 122, 53, 0.10)');
+      galaxyCore.addColorStop(0.55, 'rgba(134, 239, 172, 0.06)');
+      galaxyCore.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      ctx.fillStyle = galaxyCore;
+      ctx.fillRect(0, 0, width, height);
+
+      const galaxyBand = ctx.createLinearGradient(width * 0.16, height * 0.74, width * 0.88, height * 0.12);
+      galaxyBand.addColorStop(0, 'rgba(0, 0, 0, 0)');
+      galaxyBand.addColorStop(0.44, 'rgba(22, 163, 74, 0.08)');
+      galaxyBand.addColorStop(0.52, 'rgba(255, 255, 255, 0.08)');
+      galaxyBand.addColorStop(0.62, 'rgba(134, 239, 172, 0.08)');
+      galaxyBand.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      ctx.fillStyle = galaxyBand;
+      ctx.fillRect(0, 0, width, height);
 
       // draw static stars
       stars.forEach(s => {
@@ -94,7 +115,7 @@ const StarfieldCanvas = () => {
 
         const grad = ctx.createLinearGradient(sh.x, sh.y, sh.x + dx, sh.y + dy);
         grad.addColorStop(0, `rgba(255,255,255,0)`);
-        grad.addColorStop(0.3, `rgba(0,220,255,${sh.alpha * 0.5})`);
+        grad.addColorStop(0.3, `rgba(34,197,94,${sh.alpha * 0.5})`);
         grad.addColorStop(1, `rgba(255,255,255,${sh.alpha})`);
 
         ctx.beginPath();
@@ -182,6 +203,23 @@ const Particle = ({ style }) => (
 );
 
 const LETTERS_FULL = ['F', 'U', 'L', 'L', '-', 'S', 'T', 'A', 'C', 'K'];
+const CORE_SKILLS = [
+  'Web Engineering',
+  'Object-Oriented Programming',
+  'Database Management Systems',
+  'Data Structures',
+  'Algorithms',
+  'Artificial Intelligence',
+  'Software Engineering',
+  'Computer Networks',
+  'Operating Systems',
+  'Cloud Computing',
+  'System Design',
+];
+const MOBILE_SKILL_ROWS = [
+  ['Web Engineering', 'Object-Oriented Programming', 'Data Structures', 'Algorithms', 'Software Engineering', 'System Design'],
+  ['Database Management Systems', 'Artificial Intelligence', 'Computer Networks', 'Operating Systems', 'Cloud Computing'],
+];
 
 const Hero = () => {
   const heroRef = useRef(null);
@@ -269,7 +307,7 @@ const Hero = () => {
                 whileHover={{
                   scale: 1.25,
                   rotateY: 15,
-                  textShadow: '0 0 30px rgba(0,255,255,0.8)',
+                  textShadow: '0 0 30px rgba(22,163,74,0.35)',
                   transition: { duration: 0.2 },
                 }}
               >
@@ -358,6 +396,9 @@ const Hero = () => {
           variants={imageVariants}
           style={{ x: springX, y: springY }}
         >
+          <span className="hero__image-bleed" aria-hidden="true">
+            <img src={Myself} alt="" />
+          </span>
           <span className="hero__image-ring hero__image-ring--1"></span>
           <span className="hero__image-ring hero__image-ring--2"></span>
           <span className="hero__image-ring hero__image-ring--3"></span>
@@ -367,12 +408,39 @@ const Hero = () => {
           <motion.img
             src={Myself}
             alt="Muhammad Arslan"
+            decoding="async"
+            fetchPriority="high"
+            draggable="false"
             animate={{ y: [0, -18, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
           />
           <span className="hero__image-platform"></span>
         </motion.div>
       </motion.div>
+
+      <div className="hero__skills-marquee" aria-label="Core computer science skills">
+        <div className="hero__skills-track hero__skills-track--desktop">
+          {[...CORE_SKILLS, ...CORE_SKILLS].map((skill, i) => (
+            <span className="hero__skill-pill" key={`desktop-${skill}-${i}`}>
+              {skill}
+            </span>
+          ))}
+        </div>
+        <div className="hero__skills-track hero__skills-track--mobile hero__skills-track--primary">
+          {[...MOBILE_SKILL_ROWS[0], ...MOBILE_SKILL_ROWS[0]].map((skill, i) => (
+            <span className="hero__skill-pill" key={`mobile-primary-${skill}-${i}`}>
+              {skill}
+            </span>
+          ))}
+        </div>
+        <div className="hero__skills-track hero__skills-track--mobile hero__skills-track--secondary" aria-hidden="true">
+          {[...MOBILE_SKILL_ROWS[1], ...MOBILE_SKILL_ROWS[1]].map((skill, i) => (
+            <span className="hero__skill-pill" key={`mobile-secondary-${skill}-${i}`}>
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
 
       <div className="hero__fade-bottom"></div>
     </div>

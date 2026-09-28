@@ -35,7 +35,7 @@
     cursor: pointer;
     user-select: none;
     position: relative;
-    min-width: 160px;
+    min-width: 290px;
 
     &::before {
       content: '';
@@ -51,21 +51,37 @@
     &:hover::before { opacity: 1; }
   }
 
-  &__logo-text {
-    font-family: 'Sacramento', cursive;
-    font-size: 2.1em;
-    font-weight: 400;
-    letter-spacing: 0.03em;
-    line-height: 1;
-    background: linear-gradient(135deg, #00ffff 0%, #38bdf8 45%, #a78bfa 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    filter: drop-shadow(0 0 12px rgba(0, 255, 255, 0.25));
+  &__logo-image {
+    display: block;
+    width: auto;
+    height: 58px;
+    max-width: 200px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 12px rgba(0, 255, 255, 0.2));
     transition: filter 0.3s ease;
 
     .header__logo:hover & {
       filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.45));
+    }
+  }
+
+  &__logo-text {
+    font-family: 'Sacramento', cursive;
+    font-size: 1.8em;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    margin-left: -0.16rem;
+    white-space: nowrap;
+    background: linear-gradient(135deg, #1f7a35 0%, #2f8f46 42%, #74c987 76%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 10px rgba(47, 143, 70, 0.28));
+    transition: filter 0.3s ease;
+
+    .header__logo:hover & {
+      filter: drop-shadow(0 0 18px rgba(47, 143, 70, 0.45));
     }
   }
 
@@ -184,6 +200,66 @@
   &__github   a:hover svg { color: #00ffff; }
   &__instagram a:hover svg { color: #e1306c; }
 
+  &__theme-toggle {
+    position: relative;
+    width: 62px;
+    height: 36px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    background:
+      radial-gradient(circle at 20% 50%, rgba(255,255,255,0.16), transparent 32%),
+      rgba(255, 255, 255, 0.04);
+    display: inline-flex;
+    align-items: center;
+    padding: 4px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0,255,255,0.16), rgba(124,58,237,0.16));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    &:hover::before { opacity: 1; }
+
+    &--dark {
+      justify-content: flex-end;
+    }
+
+    &--mobile {
+      display: none;
+      position: absolute;
+      top: 50%;
+      right: calc(5% + 3em);
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+  }
+
+  &__theme-orb {
+    position: relative;
+    z-index: 1;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    color: #16a34a;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+
+    svg {
+      width: 0.9em;
+      height: 0.9em;
+    }
+  }
+
   // ── Hamburger ───────────────────────────────────────────────────────────
   &__hamburger-icon {
     position: absolute;
@@ -268,8 +344,96 @@
 
   // ── Responsive ──────────────────────────────────────────────────────────
   @media screen and (max-width: 768px) {
+    &__container {
+      justify-content: flex-start;
+      gap: 0.65em;
+      height: 64px;
+      padding-right: 5%;
+    }
+
     &__nav-links { display: none; }
-    &__hamburger-icon { display: flex; }
+    &__hamburger-icon {
+      position: static;
+      transform: none;
+      display: flex;
+      flex: 0 0 auto;
+      width: 1.55em;
+      height: 1.1em;
+      margin-left: 0.15em;
+    }
+
+    &__theme-toggle--mobile {
+      display: inline-flex;
+      position: relative;
+      top: auto;
+      right: auto;
+      transform: none;
+      flex: 0 0 auto;
+      margin-left: auto;
+      width: 54px;
+      height: 32px;
+      padding: 4px;
+    }
+
+    &__theme-orb {
+      width: 22px;
+      height: 22px;
+    }
+
     &__social { display: none; }
+
+    &__mobile-menu {
+      top: 64px;
+    }
+
+    &__logo {
+      gap: 0;
+      min-width: 0;
+      max-width: calc(100% - 118px);
+      flex: 1 1 auto;
+      overflow: hidden;
+    }
+
+    &__logo-image {
+      height: 44px;
+      max-width: 118px;
+      flex: 0 0 auto;
+    }
+
+    &__logo-text {
+      font-size: 1.12em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  @media screen and (max-width: 380px) {
+    &__container {
+      gap: 0.55em;
+      height: 60px;
+    }
+
+    &__logo-image {
+      height: 40px;
+      max-width: 104px;
+    }
+
+    &__logo-text {
+      display: none;
+    }
+
+    &__theme-toggle--mobile {
+      width: 50px;
+      height: 30px;
+    }
+
+    &__theme-orb {
+      width: 20px;
+      height: 20px;
+    }
+
+    &__mobile-menu {
+      top: 60px;
+    }
   }
 }

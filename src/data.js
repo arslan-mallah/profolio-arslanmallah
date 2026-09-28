@@ -50,11 +50,19 @@ export const config = {
           buttonText: 'CHECK OUT',
         },
         {
+          heading: 'CARERP',
+          description:
+            '"CARERP" is a full multi-tenant ERP system built for automotive and workshop businesses, covering tenant-wise operations, customer management, inventory, billing, reporting, and day-to-day business workflows from one centralized platform.',
+          animationDelay: '1500',
+          buttonLink: 'https://carerp.io/en/',
+          buttonText: 'CHECK OUT',
+        },
+        {
           heading: 'eCAR',
           description:
-            '"eCAR" is a Saudi Arabia-based ERP (Enterprise Resource Planning) system designed to streamline and automate business operations. Built to handle complex organizational workflows, it offers a comprehensive solution for managing resources, processes, and data efficiently across departments.',
-          animationDelay: '1500',
-          buttonLink: 'https://samcotec.com/ar/',
+            '"eCAR" is a Saudi Arabia-based workshop management and invoicing system designed for automotive service operations. It helps manage customers, vehicles, job cards, service workflows, invoices, payments, and workshop reporting in a structured digital platform.',
+          animationDelay: '1700',
+          buttonLink: 'https://app.carerp.io/login',
           buttonText: 'CHECK OUT',
         },
       ],

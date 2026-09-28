@@ -1,0 +1,901 @@
+/* Green and white professional redesign */
+
+:root {
+  --theme-green-900: #0a3d22;
+  --theme-green-800: #0f5f32;
+  --theme-green-700: #12823f;
+  --theme-green-600: #16a34a;
+  --theme-green-500: #22c55e;
+  --theme-green-100: #dcfce7;
+  --theme-green-50: #f0fdf4;
+  --theme-ink: #102018;
+  --theme-muted: #62756a;
+  --theme-line: rgba(18, 130, 63, 0.14);
+  --theme-card: rgba(255, 255, 255, 0.92);
+  --theme-shadow: 0 24px 70px rgba(15, 95, 50, 0.12);
+  --theme-gradient: linear-gradient(135deg, #0f7a35 0%, #22c55e 100%);
+  --cursor-dot: #16a34a;
+  --cursor-dot-text: rgba(22, 163, 74, 0.28);
+  --cursor-ring: rgba(22, 163, 74, 0.35);
+  --cursor-ring-hover: rgba(22, 163, 74, 0.60);
+  --cursor-ring-click: rgba(15, 122, 53, 0.80);
+  --cursor-ring-bg: rgba(22, 163, 74, 0.08);
+}
+
+body {
+  background:
+    radial-gradient(circle at 80% -10%, rgba(34, 197, 94, 0.14), transparent 28rem),
+    linear-gradient(180deg, #ffffff 0%, #f7fbf7 52%, #eef8ef 100%);
+  color: var(--theme-ink);
+}
+
+.section-label,
+.about__header .section-label,
+.works__header .section-label,
+.skill__header .section-label,
+.contact__header .section-label,
+.route-label {
+  color: var(--theme-green-700) !important;
+}
+
+.section-heading span,
+.about__header h1 span,
+.works__header h1 span,
+.skill__header h1 span,
+.contact__header h1 span,
+.about-intro__header h1 span,
+.experience__header h1 span,
+.internships__header h1 span,
+.graduation__header h1 span,
+.hero__alphabet,
+.hero__stat-value,
+.hero__highlight {
+  background: var(--theme-gradient) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+.about__header h1,
+.works__header h1,
+.skill__header h1,
+.contact__header h1,
+.about-intro__header h1,
+.experience__header h1,
+.internships__header h1,
+.graduation__header h1 {
+  color: var(--theme-ink) !important;
+}
+
+.about__header p,
+.works__header p,
+.hero__description p,
+.skill__details li span,
+.project-card__desc,
+.about__details a p,
+.contact__info-details li p,
+.about-intro__description p,
+.experience__box ul li,
+.internships__box ul li,
+.graduation__description p {
+  color: var(--theme-muted) !important;
+}
+
+.header {
+  background: rgba(255, 255, 255, 0.86) !important;
+  border-bottom: 1px solid var(--theme-line) !important;
+  box-shadow: 0 10px 35px rgba(15, 95, 50, 0.06);
+}
+
+.header--scrolled {
+  background: rgba(255, 255, 255, 0.96) !important;
+  box-shadow: 0 14px 40px rgba(15, 95, 50, 0.10) !important;
+}
+
+.header__container {
+  color: var(--theme-green-700) !important;
+}
+
+.header__logo::before {
+  background: rgba(34, 197, 94, 0.10) !important;
+}
+
+.header__logo-image {
+  filter: drop-shadow(0 8px 18px rgba(15, 95, 50, 0.12)) !important;
+}
+
+.header__logo-text,
+.contact__info-title,
+.footer__logo {
+  background: var(--theme-gradient) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  filter: none !important;
+}
+
+.header__nav-links ul li a,
+.header__mobile-link {
+  color: #476154 !important;
+}
+
+.header__nav-links ul li a:hover,
+.header__nav-links ul li a.active,
+.header__mobile-link:hover,
+.header__mobile-link.active {
+  color: var(--theme-green-700) !important;
+}
+
+.header__nav-underline,
+.header__hamburger-icon span {
+  background: var(--theme-gradient) !important;
+  box-shadow: none !important;
+}
+
+.header__social {
+  border-left-color: var(--theme-line) !important;
+}
+
+.header__social p a,
+.header__mobile-social a,
+.footer__social-link,
+.contact__social p a {
+  background: #ffffff !important;
+  border-color: var(--theme-line) !important;
+  box-shadow: 0 10px 30px rgba(15, 95, 50, 0.08);
+}
+
+.header__social p a svg,
+.header__mobile-social a svg,
+.footer__social-link,
+.contact__social p a svg {
+  color: var(--theme-green-700) !important;
+}
+
+.header__mobile-menu {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border-bottom-color: var(--theme-line) !important;
+  box-shadow: var(--theme-shadow);
+}
+
+.hero {
+  background:
+    linear-gradient(rgba(18, 130, 63, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(18, 130, 63, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 76% 18%, rgba(34, 197, 94, 0.18), transparent 28rem),
+    radial-gradient(circle at 8% 86%, rgba(15, 122, 53, 0.10), transparent 24rem),
+    linear-gradient(180deg, #ffffff 0%, #f4fbf5 100%) !important;
+  background-size: 42px 42px, 42px 42px, auto, auto, auto !important;
+}
+
+.hero__starfield {
+  opacity: 0.30 !important;
+  mix-blend-mode: multiply !important;
+}
+
+.hero__grid-line {
+  background: linear-gradient(to bottom, transparent, rgba(22, 163, 74, 0.12), transparent) !important;
+}
+
+.hero__particle {
+  background: var(--theme-gradient) !important;
+  box-shadow: 0 0 18px rgba(34, 197, 94, 0.28);
+}
+
+.hero::before {
+  background: radial-gradient(ellipse at center, rgba(34, 197, 94, 0.18), rgba(220, 252, 231, 0.24), transparent 72%) !important;
+  filter: blur(26px) !important;
+}
+
+.hero::after {
+  background: linear-gradient(112deg, transparent, rgba(34, 197, 94, 0.10), rgba(255, 255, 255, 0.18), transparent) !important;
+}
+
+.hero__fade-bottom {
+  background: linear-gradient(to bottom, transparent 0%, #f7fbf7 100%) !important;
+}
+
+.hero__intro-box {
+  color: var(--theme-ink) !important;
+}
+
+.hero__intro-title,
+.hero__developer-text,
+.hero__stat-label {
+  color: #5f7468 !important;
+}
+
+.hero__intro-line,
+.hero__image-platform {
+  background: var(--theme-gradient) !important;
+}
+
+.hero__alphabet--last,
+.hero__animated-alphabet-box span:last-child {
+  color: var(--theme-ink) !important;
+  -webkit-text-fill-color: var(--theme-ink) !important;
+}
+
+.hero__buttons a {
+  border-radius: 999px !important;
+}
+
+.hero__cv-btn {
+  background: var(--theme-gradient) !important;
+  color: #ffffff !important;
+  box-shadow: 0 16px 38px rgba(22, 163, 74, 0.26) !important;
+}
+
+.hero__cv-btn svg {
+  stroke: #ffffff !important;
+}
+
+.hero__contact-btn,
+.back-btn {
+  background: #ffffff !important;
+  border-color: rgba(22, 163, 74, 0.24) !important;
+  color: var(--theme-green-700) !important;
+  box-shadow: 0 12px 30px rgba(15, 95, 50, 0.08);
+}
+
+.hero__contact-btn:hover,
+.back-btn:hover {
+  background: var(--theme-green-50) !important;
+  color: var(--theme-green-800) !important;
+}
+
+.hero__stats {
+  border-top-color: var(--theme-line) !important;
+}
+
+.hero__skills-marquee {
+  background: rgba(255, 255, 255, 0.72) !important;
+  border-top-color: rgba(22, 163, 74, 0.14) !important;
+  border-bottom-color: rgba(22, 163, 74, 0.14) !important;
+  box-shadow: 0 18px 42px rgba(15, 95, 50, 0.08);
+}
+
+.hero__skill-pill {
+  background: rgba(255, 255, 255, 0.90) !important;
+  border-color: rgba(22, 163, 74, 0.18) !important;
+  color: #17452a !important;
+  box-shadow: 0 10px 24px rgba(15, 95, 50, 0.08) !important;
+}
+
+.hero__image::before {
+  background: radial-gradient(ellipse at center, rgba(34, 197, 94, 0.22), rgba(220, 252, 231, 0.34), transparent 70%) !important;
+}
+
+.hero__image::after {
+  background: radial-gradient(ellipse at center, rgba(34, 197, 94, 0.28), rgba(255, 255, 255, 0.7), transparent 78%) !important;
+}
+
+.hero__image > img {
+  filter:
+    brightness(1.04)
+    contrast(1.08)
+    saturate(1.04)
+    drop-shadow(0 26px 42px rgba(15, 95, 50, 0.18)) !important;
+}
+
+.hero__image-bleed {
+  opacity: 0.32 !important;
+  mix-blend-mode: normal !important;
+}
+
+.hero__image-ring {
+  border-color: rgba(22, 163, 74, 0.16) !important;
+}
+
+.hero__image-glow-top,
+.hero__image-glow-left,
+.hero__image-glow-right {
+  background: radial-gradient(ellipse at center, rgba(34, 197, 94, 0.18), transparent 72%) !important;
+}
+
+.about,
+.works,
+.skill,
+.contact,
+.about-intro,
+.experience,
+.internships,
+.graduation {
+  background:
+    radial-gradient(circle at 92% 4%, rgba(34, 197, 94, 0.08), transparent 22rem),
+    linear-gradient(180deg, #f7fbf7 0%, #ffffff 100%) !important;
+  color: var(--theme-ink) !important;
+}
+
+.works,
+.contact,
+.experience,
+.internships,
+.graduation {
+  background:
+    radial-gradient(circle at 8% 14%, rgba(34, 197, 94, 0.08), transparent 22rem),
+    linear-gradient(180deg, #ffffff 0%, #f7fbf7 100%) !important;
+}
+
+.about::before,
+.works::before,
+.skill::before,
+.contact::before,
+.footer::before {
+  background: linear-gradient(90deg, transparent, rgba(22, 163, 74, 0.20), transparent) !important;
+}
+
+.about::after {
+  background-image:
+    linear-gradient(rgba(22, 163, 74, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(22, 163, 74, 0.035) 1px, transparent 1px) !important;
+}
+
+.works::after,
+.skill::after,
+.contact::after,
+.footer::after {
+  background: radial-gradient(ellipse, rgba(34, 197, 94, 0.10) 0%, transparent 70%) !important;
+}
+
+.about__details,
+.project-card,
+.skill__details,
+.contact__form,
+.contact__info-details li,
+.about-intro__description p,
+.experience__box,
+.internships__box,
+.graduation__description h1,
+.graduation__description p,
+.graduation__subjects span {
+  background: var(--theme-card) !important;
+  border: 1px solid var(--theme-line) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 12px 38px rgba(15, 95, 50, 0.07);
+  backdrop-filter: blur(12px);
+}
+
+.about__details:hover,
+.project-card:hover,
+.skill__details:hover,
+.contact__info-details li:hover,
+.experience__box:hover,
+.internships__box:hover {
+  border-color: rgba(22, 163, 74, 0.30) !important;
+  box-shadow: var(--theme-shadow) !important;
+}
+
+.about__details:nth-child(n),
+.project-card:nth-child(n),
+.internships__box::before {
+  border-top-color: var(--theme-green-600) !important;
+}
+
+.project-card:nth-child(n) {
+  --c-accent: var(--theme-gradient);
+  --c-glow: rgba(22, 163, 74, 0.12);
+  --c-btn: var(--theme-gradient);
+  --c-text: #ffffff;
+}
+
+.project-card::before,
+.internships__box::before {
+  background: var(--theme-gradient) !important;
+}
+
+.project-card__title,
+.about__details a h2,
+.about__details a h2 span,
+.about__details a p span:nth-child(1),
+.skill__details h4,
+.experience__box h2,
+.internships__box h2 p:first-child,
+.graduation__description h1,
+.graduation__subjects span {
+  color: var(--theme-ink) !important;
+}
+
+.project-card__number,
+.about__card-number {
+  color: rgba(15, 95, 50, 0.08) !important;
+}
+
+.project-card__btn,
+.contact__send-btn {
+  background: var(--theme-gradient) !important;
+  color: #ffffff !important;
+  box-shadow: 0 12px 30px rgba(22, 163, 74, 0.22) !important;
+}
+
+.contact__send-btn svg {
+  stroke: #ffffff !important;
+}
+
+.about__card-badge,
+.about__details:hover a h2 span,
+.skill__group-title,
+.contact__info-details li:last-child span,
+.contact__info-details li svg,
+.experience__box h3,
+.experience__box h3 svg,
+.experience__calendar,
+.internships__box h2 p:last-child,
+.internships__box h3 svg,
+.internships__calendar,
+.graduation__description h2,
+.graduation__description h2 svg {
+  color: var(--theme-green-700) !important;
+}
+
+.about__details a ul li::before,
+.experience__box ul li::before,
+.internships__box ul li::before {
+  color: var(--theme-green-600) !important;
+}
+
+.skill__group-dot {
+  background: var(--theme-green-600) !important;
+  box-shadow: 0 0 12px rgba(22, 163, 74, 0.28) !important;
+}
+
+.skill__cloud .tagcloud--item {
+  color: rgba(15, 95, 50, 0.72) !important;
+}
+
+.skill__cloud .tagcloud--item:hover {
+  color: var(--theme-green-600) !important;
+  text-shadow: 0 0 14px rgba(34, 197, 94, 0.28) !important;
+}
+
+.contact__form::before {
+  background: linear-gradient(90deg, transparent, rgba(22, 163, 74, 0.44), transparent) !important;
+}
+
+.contact__form-group label {
+  color: #5f7468 !important;
+}
+
+.contact__form-group:focus-within label {
+  color: var(--theme-green-700) !important;
+}
+
+.contact__form-group input,
+.contact__form-group textarea {
+  background: #ffffff !important;
+  border-color: var(--theme-line) !important;
+  color: var(--theme-ink) !important;
+}
+
+.contact__form-group input::placeholder,
+.contact__form-group textarea::placeholder {
+  color: #9aac9f !important;
+}
+
+.contact__form-group input:focus,
+.contact__form-group textarea:focus {
+  border-color: rgba(22, 163, 74, 0.38) !important;
+  box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.10) !important;
+}
+
+.contact__info-details li:last-child {
+  background: linear-gradient(135deg, rgba(240, 253, 244, 0.95), rgba(255, 255, 255, 0.95)) !important;
+}
+
+.footer {
+  background: #ffffff !important;
+  color: var(--theme-muted) !important;
+  border-top: 1px solid var(--theme-line);
+}
+
+.footer__tagline,
+.footer__bottom p,
+.footer__copy {
+  color: var(--theme-muted) !important;
+}
+
+.footer__bottom p strong {
+  color: var(--theme-ink) !important;
+}
+
+.experience__main-box::before {
+  background: linear-gradient(180deg, var(--theme-green-600), rgba(34, 197, 94, 0.10)) !important;
+}
+
+.experience__box::before {
+  background: var(--theme-green-600) !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.12) !important;
+}
+
+.internships__box h3,
+.experience__box h2 {
+  color: #5f7468 !important;
+}
+
+.experience__box ul li span,
+.internships__box ul li span,
+.about__details a ul li span {
+  color: #273c30 !important;
+}
+
+.experience__box ul li span b,
+.internships__box ul li span b,
+.about__details a ul li small {
+  color: var(--theme-green-700) !important;
+}
+
+.experience__box h3,
+.internships__box h3 {
+  color: #496155 !important;
+}
+
+.graduation__subjects span:hover {
+  background: var(--theme-green-50) !important;
+  color: var(--theme-green-700) !important;
+}
+
+@media screen and (max-width: 768px) {
+  .header__container {
+    padding: 0 5% !important;
+  }
+
+  .hero__container {
+    background: transparent !important;
+  }
+}
+
+body[data-theme='dark'] {
+  --theme-green-900: #ccfbf1;
+  --theme-green-800: #67e8f9;
+  --theme-green-700: #22d3ee;
+  --theme-green-600: #00ffff;
+  --theme-green-500: #7c3aed;
+  --theme-green-100: rgba(0, 255, 255, 0.10);
+  --theme-green-50: rgba(0, 255, 255, 0.06);
+  --theme-ink: #e2e8f0;
+  --theme-muted: #94a3b8;
+  --theme-line: rgba(0, 255, 255, 0.14);
+  --theme-card: rgba(13, 17, 23, 0.86);
+  --theme-shadow: 0 30px 70px rgba(0, 0, 0, 0.45), 0 0 42px rgba(0, 255, 255, 0.08);
+  --theme-gradient: linear-gradient(135deg, #00ffff 0%, #7c3aed 100%);
+  --cursor-dot: #00ffff;
+  --cursor-dot-text: rgba(0, 255, 255, 0.25);
+  --cursor-ring: rgba(0, 255, 255, 0.35);
+  --cursor-ring-hover: rgba(0, 255, 255, 0.60);
+  --cursor-ring-click: rgba(124, 58, 237, 0.80);
+  --cursor-ring-bg: rgba(0, 255, 255, 0.06);
+  background: #030712;
+  color: #e2e8f0;
+}
+
+body[data-theme='dark'] .header {
+  background: rgba(3, 7, 18, 0.78) !important;
+  border-bottom-color: rgba(0, 255, 255, 0.10) !important;
+  box-shadow: 0 10px 38px rgba(0, 0, 0, 0.34) !important;
+}
+
+body[data-theme='dark'] .header--scrolled {
+  background: rgba(3, 7, 18, 0.96) !important;
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.50) !important;
+}
+
+body[data-theme='dark'] .header__logo::before {
+  background: radial-gradient(ellipse at center, rgba(0,255,255,0.10) 0%, transparent 70%) !important;
+}
+
+body[data-theme='dark'] .header__logo-image {
+  filter: drop-shadow(0 0 14px rgba(0, 255, 255, 0.22)) !important;
+}
+
+body[data-theme='dark'] .header__nav-links ul li a,
+body[data-theme='dark'] .header__mobile-link {
+  color: #94a3b8 !important;
+}
+
+body[data-theme='dark'] .header__nav-links ul li a:hover,
+body[data-theme='dark'] .header__nav-links ul li a.active,
+body[data-theme='dark'] .header__mobile-link:hover,
+body[data-theme='dark'] .header__mobile-link.active {
+  color: #00ffff !important;
+}
+
+body[data-theme='dark'] .header__social {
+  border-left-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+body[data-theme='dark'] .header__social p a,
+body[data-theme='dark'] .header__mobile-social a,
+body[data-theme='dark'] .footer__social-link,
+body[data-theme='dark'] .contact__social p a {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: none !important;
+}
+
+body[data-theme='dark'] .header__social p a svg,
+body[data-theme='dark'] .header__mobile-social a svg,
+body[data-theme='dark'] .footer__social-link,
+body[data-theme='dark'] .contact__social p a svg {
+  color: #94a3b8 !important;
+}
+
+body[data-theme='dark'] .header__mobile-menu {
+  background: rgba(3, 7, 18, 0.98) !important;
+  border-bottom-color: rgba(0, 255, 255, 0.12) !important;
+}
+
+.header__theme-toggle {
+  background:
+    radial-gradient(circle at 76% 36%, rgba(34, 197, 94, 0.18), transparent 34%),
+    #f0fdf4 !important;
+  border-color: rgba(22, 163, 74, 0.22) !important;
+  box-shadow: 0 12px 28px rgba(15, 95, 50, 0.10);
+}
+
+.header__theme-toggle::before {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.16), rgba(255, 255, 255, 0.10)) !important;
+}
+
+.header__theme-orb {
+  background: linear-gradient(135deg, #ffffff, #dcfce7) !important;
+  color: #16a34a !important;
+}
+
+body[data-theme='dark'] .header__theme-toggle {
+  background:
+    radial-gradient(circle at 20% 46%, rgba(0, 255, 255, 0.22), transparent 34%),
+    rgba(15, 23, 42, 0.96) !important;
+  border-color: rgba(0, 255, 255, 0.22) !important;
+  box-shadow: 0 0 24px rgba(0, 255, 255, 0.10) !important;
+}
+
+body[data-theme='dark'] .header__theme-orb {
+  background: linear-gradient(135deg, #020617, #172554) !important;
+  color: #00ffff !important;
+  box-shadow: 0 0 18px rgba(0, 255, 255, 0.24) !important;
+}
+
+body[data-theme='dark'] .hero {
+  background:
+    radial-gradient(ellipse 75% 42% at 74% 28%, rgba(36, 56, 145, 0.28) 0%, rgba(10, 20, 68, 0.14) 34%, transparent 68%),
+    radial-gradient(ellipse 54% 26% at 58% 44%, rgba(0, 210, 255, 0.09) 0%, rgba(70, 42, 180, 0.08) 36%, transparent 72%),
+    radial-gradient(ellipse 50% 40% at 18% 68%, rgba(0, 60, 100, 0.12) 0%, transparent 58%),
+    linear-gradient(180deg, #000006 0%, #01020a 42%, #00030b 72%, #020714 100%) !important;
+  background-size: auto !important;
+}
+
+body[data-theme='dark'] .hero__starfield {
+  opacity: 1 !important;
+  mix-blend-mode: screen !important;
+}
+
+body[data-theme='dark'] .hero__grid-line {
+  background: linear-gradient(to bottom, transparent, rgba(0, 255, 255, 0.07), transparent) !important;
+}
+
+body[data-theme='dark'] .hero__particle {
+  background: linear-gradient(135deg, #00ffff, #7c3aed) !important;
+  box-shadow: 0 0 22px rgba(0, 255, 255, 0.22);
+}
+
+body[data-theme='dark'] .hero::before {
+  background: radial-gradient(ellipse at center, rgba(86, 116, 255, 0.13) 0%, rgba(0, 180, 255, 0.055) 42%, transparent 72%) !important;
+}
+
+body[data-theme='dark'] .hero::after {
+  background: linear-gradient(112deg, transparent 0%, rgba(0, 225, 255, 0.04) 35%, rgba(160, 170, 255, 0.08) 50%, rgba(80, 44, 180, 0.05) 62%, transparent 100%) !important;
+}
+
+body[data-theme='dark'] .hero__fade-bottom {
+  background: linear-gradient(to bottom, transparent 0%, #030712 100%) !important;
+}
+
+body[data-theme='dark'] .hero__alphabet--last,
+body[data-theme='dark'] .hero__animated-alphabet-box span:last-child {
+  color: #e2e8f0 !important;
+  -webkit-text-fill-color: #e2e8f0 !important;
+}
+
+body[data-theme='dark'] .hero__intro-title,
+body[data-theme='dark'] .hero__developer-text,
+body[data-theme='dark'] .hero__stat-label {
+  color: #94a3b8 !important;
+}
+
+body[data-theme='dark'] .hero__description p {
+  color: #94a3b8 !important;
+}
+
+body[data-theme='dark'] .hero__cv-btn {
+  color: #030712 !important;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.25), 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+body[data-theme='dark'] .hero__cv-btn svg {
+  stroke: #030712 !important;
+}
+
+body[data-theme='dark'] .hero__contact-btn,
+body[data-theme='dark'] .back-btn {
+  background: rgba(0, 255, 255, 0.05) !important;
+  border-color: rgba(0, 255, 255, 0.25) !important;
+  color: #e2e8f0 !important;
+  box-shadow: none !important;
+}
+
+body[data-theme='dark'] .hero__contact-btn:hover,
+body[data-theme='dark'] .back-btn:hover {
+  background: rgba(0, 255, 255, 0.10) !important;
+  color: #00ffff !important;
+}
+
+body[data-theme='dark'] .hero__stats {
+  border-top-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+body[data-theme='dark'] .hero__skills-marquee {
+  background: rgba(3, 7, 18, 0.28) !important;
+  border-top-color: rgba(0, 255, 255, 0.10) !important;
+  border-bottom-color: rgba(0, 255, 255, 0.10) !important;
+  box-shadow: none !important;
+}
+
+body[data-theme='dark'] .hero__skill-pill {
+  background: rgba(13, 17, 23, 0.68) !important;
+  border-color: rgba(0, 255, 255, 0.16) !important;
+  color: #cbd5e1 !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18) !important;
+}
+
+body[data-theme='dark'] .hero__image::before {
+  background: radial-gradient(ellipse at center, rgba(15, 42, 96, 0.38) 0%, rgba(0, 92, 180, 0.18) 42%, transparent 70%) !important;
+}
+
+body[data-theme='dark'] .hero__image::after {
+  background: radial-gradient(ellipse at center, rgba(0, 120, 210, 0.46) 0%, rgba(2, 8, 24, 0.42) 52%, transparent 80%) !important;
+}
+
+body[data-theme='dark'] .hero__image > img {
+  filter:
+    brightness(1.04)
+    contrast(1.12)
+    saturate(1.08)
+    drop-shadow(0 -16px 32px rgba(6, 22, 64, 0.38))
+    drop-shadow(0 -4px 14px rgba(0, 82, 168, 0.15))
+    drop-shadow(0 30px 40px rgba(0, 0, 0, 0.52)) !important;
+}
+
+body[data-theme='dark'] .hero__image-ring {
+  border-color: rgba(0, 255, 255, 0.13) !important;
+}
+
+body[data-theme='dark'] .about,
+body[data-theme='dark'] .works,
+body[data-theme='dark'] .skill,
+body[data-theme='dark'] .contact,
+body[data-theme='dark'] .about-intro,
+body[data-theme='dark'] .experience,
+body[data-theme='dark'] .internships,
+body[data-theme='dark'] .graduation {
+  background:
+    radial-gradient(circle at 84% 4%, rgba(124, 58, 237, 0.05), transparent 26rem),
+    linear-gradient(180deg, #030712 0%, #0d1117 100%) !important;
+  color: #e2e8f0 !important;
+}
+
+body[data-theme='dark'] .works,
+body[data-theme='dark'] .contact,
+body[data-theme='dark'] .experience,
+body[data-theme='dark'] .internships,
+body[data-theme='dark'] .graduation {
+  background:
+    radial-gradient(circle at 8% 14%, rgba(0, 255, 255, 0.045), transparent 24rem),
+    linear-gradient(180deg, #030712 0%, #0d1117 100%) !important;
+}
+
+body[data-theme='dark'] .about::before,
+body[data-theme='dark'] .works::before,
+body[data-theme='dark'] .skill::before,
+body[data-theme='dark'] .contact::before,
+body[data-theme='dark'] .footer::before {
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.18), rgba(124, 58, 237, 0.18), transparent) !important;
+}
+
+body[data-theme='dark'] .about::after {
+  background-image:
+    linear-gradient(rgba(0,255,255,0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,255,0.018) 1px, transparent 1px) !important;
+}
+
+body[data-theme='dark'] .about__details,
+body[data-theme='dark'] .project-card,
+body[data-theme='dark'] .skill__details,
+body[data-theme='dark'] .contact__form,
+body[data-theme='dark'] .contact__info-details li,
+body[data-theme='dark'] .about-intro__description p,
+body[data-theme='dark'] .experience__box,
+body[data-theme='dark'] .internships__box,
+body[data-theme='dark'] .graduation__description h1,
+body[data-theme='dark'] .graduation__description p,
+body[data-theme='dark'] .graduation__subjects span {
+  background: rgba(13, 17, 23, 0.86) !important;
+  border-color: rgba(255, 255, 255, 0.07) !important;
+  box-shadow: none !important;
+}
+
+body[data-theme='dark'] .about__details:hover,
+body[data-theme='dark'] .project-card:hover,
+body[data-theme='dark'] .skill__details:hover,
+body[data-theme='dark'] .contact__info-details li:hover,
+body[data-theme='dark'] .experience__box:hover,
+body[data-theme='dark'] .internships__box:hover {
+  border-color: rgba(0, 255, 255, 0.22) !important;
+  box-shadow: var(--theme-shadow) !important;
+}
+
+body[data-theme='dark'] .project-card__title,
+body[data-theme='dark'] .about__details a h2,
+body[data-theme='dark'] .about__details a h2 span,
+body[data-theme='dark'] .about__details a p span:nth-child(1),
+body[data-theme='dark'] .skill__details h4,
+body[data-theme='dark'] .experience__box h2,
+body[data-theme='dark'] .internships__box h2 p:first-child,
+body[data-theme='dark'] .graduation__description h1,
+body[data-theme='dark'] .graduation__subjects span {
+  color: #e2e8f0 !important;
+}
+
+body[data-theme='dark'] .project-card__desc,
+body[data-theme='dark'] .about__details a p,
+body[data-theme='dark'] .skill__details li span,
+body[data-theme='dark'] .contact__info-details li p,
+body[data-theme='dark'] .about-intro__description p,
+body[data-theme='dark'] .experience__box ul li,
+body[data-theme='dark'] .internships__box ul li,
+body[data-theme='dark'] .graduation__description p {
+  color: #94a3b8 !important;
+}
+
+body[data-theme='dark'] .experience__box ul li span,
+body[data-theme='dark'] .internships__box ul li span,
+body[data-theme='dark'] .about__details a ul li span {
+  color: #cbd5e1 !important;
+}
+
+body[data-theme='dark'] .experience__box ul li span b {
+  color: #e2e8f0 !important;
+}
+
+body[data-theme='dark'] .contact__form-group input,
+body[data-theme='dark'] .contact__form-group textarea {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #e2e8f0 !important;
+}
+
+body[data-theme='dark'] .contact__form-group input:focus,
+body[data-theme='dark'] .contact__form-group textarea:focus {
+  border-color: rgba(0, 255, 255, 0.35) !important;
+  box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.06) !important;
+}
+
+body[data-theme='dark'] .contact__info-details li:last-child {
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.07), rgba(124, 58, 237, 0.07)) !important;
+}
+
+body[data-theme='dark'] .footer {
+  background: #060d18 !important;
+  color: #64748b !important;
+  border-top-color: rgba(0, 255, 255, 0.10) !important;
+}
+
+body[data-theme='dark'] .footer__tagline,
+body[data-theme='dark'] .footer__bottom p,
+body[data-theme='dark'] .footer__copy {
+  color: #64748b !important;
+}
+
+body[data-theme='dark'] .footer__bottom p strong {
+  color: #cbd5e1 !important;
+}
