@@ -107,23 +107,13 @@ const CustomCursor = () => {
     };
   }, [cursorX, cursorY]);
 
-  const ringSize   = cursorState === 'hover' ? 52 : cursorState === 'click' ? 24 : cursorState === 'text' ? 4 : 36;
+  const ringSize   = cursorState === 'hover' ? 30 : cursorState === 'click' ? 22 : cursorState === 'text' ? 4 : 26;
   const dotSize    = cursorState === 'text'  ? 20 :  cursorState === 'hover' ? 6 : 10;
-  const ringColor  = cursorState === 'hover' ? 'var(--cursor-ring-hover)' : cursorState === 'click' ? 'var(--cursor-ring-click)' : 'var(--cursor-ring)';
-  const ringBg     = cursorState === 'hover' ? 'var(--cursor-ring-bg)' : 'transparent';
-  const dotColor   = cursorState === 'text'  ? 'var(--cursor-dot-text)' : 'var(--cursor-dot)';
+  const ringColor  = 'rgba(133, 77, 14, 0.42)';
+  const dotColor   = cursorState === 'text'  ? 'rgba(22, 163, 74, 0.45)' : '#16a34a';
 
   return (
     <>
-      {/* Trail dots */}
-      {Array(8).fill(null).map((_, i) => (
-        <div
-          key={i}
-          ref={el => { trailRef.current[i] = el; }}
-          className="cursor-trail"
-        />
-      ))}
-
       {/* Ambient glow */}
       <motion.div
         className="cursor-glow"
@@ -138,8 +128,8 @@ const CustomCursor = () => {
           width:  ringSize,
           height: ringSize,
           borderColor: ringColor,
-          background:  ringBg,
-          borderWidth: cursorState === 'hover' ? 1.5 : 1,
+          background: 'linear-gradient(135deg, #fff176 0%, #facc15 48%, #f59e0b 100%)',
+          borderWidth: cursorState === 'hover' ? 1.5 : cursorState === 'text' ? 2 : 1,
         }}
         transition={{ type: 'spring', stiffness: 200, damping: 18 }}
       />
@@ -153,7 +143,8 @@ const CustomCursor = () => {
           height: dotSize,
           background: dotColor,
           borderRadius: cursorState === 'text' ? '2px' : '50%',
-          opacity: cursorState === 'text' ? 0.7 : 1,
+          opacity: cursorState === 'text' ? 0.85 : 1,
+          scale: cursorState === 'click' ? 1.55 : 1,
         }}
         transition={{ type: 'spring', stiffness: 400, damping: 20 }}
       />

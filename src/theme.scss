@@ -20,6 +20,13 @@
   --cursor-ring-hover: rgba(22, 163, 74, 0.60);
   --cursor-ring-click: rgba(15, 122, 53, 0.80);
   --cursor-ring-bg: rgba(22, 163, 74, 0.08);
+  --cursor-glow: rgba(22, 163, 74, 0.12);
+  --cursor-trail: linear-gradient(135deg, #16a34a, #86efac);
+  --cursor-moon-fill: #16a34a;
+  --cursor-moon-cutout: #ffffff;
+  --cursor-star: #ffffff;
+  --cursor-star-pointer: #16a34a;
+  --cursor-star-in-moon: #16a34a;
 }
 
 body {
@@ -565,6 +572,13 @@ body[data-theme='dark'] {
   --cursor-ring-hover: rgba(0, 255, 255, 0.60);
   --cursor-ring-click: rgba(124, 58, 237, 0.80);
   --cursor-ring-bg: rgba(0, 255, 255, 0.06);
+  --cursor-glow: rgba(0, 255, 255, 0.08);
+  --cursor-trail: linear-gradient(135deg, #00ffff, #7c3aed);
+  --cursor-moon-fill: #00ffff;
+  --cursor-moon-cutout: #030712;
+  --cursor-star: #ffffff;
+  --cursor-star-pointer: #ffffff;
+  --cursor-star-in-moon: #ffffff;
   background: #030712;
   color: #e2e8f0;
 }
