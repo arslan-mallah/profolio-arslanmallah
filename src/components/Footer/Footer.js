@@ -9,7 +9,7 @@ import '../../styles/Footer/Footer.scss';
 const socialLinks = [
   { icon: faLinkedin,  href: 'https://www.linkedin.com/in/arslan-mallah/', label: 'LinkedIn'  },
   { icon: faGithub,    href: 'https://github.com/arslan-mallah',           label: 'GitHub'    },
-  { icon: faInstagram, href: 'https://www.instagram.com/arslan__mallah/profilecard/?igsh=dGJpenlnenp2bnJs', label: 'Instagram' },
+  { icon: faInstagram, href: 'https://www.instagram.com/arslan__mallah/', label: 'Instagram' },
 ];
 
 const Footer = () => {
