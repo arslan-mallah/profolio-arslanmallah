@@ -23,7 +23,7 @@ const navLinks = [
 const socialLinks = [
   { icon: faLinkedin, href: 'https://www.linkedin.com/in/arslan-mallah/', label: 'LinkedIn', className: 'header__linkedin' },
   { icon: faGithub,   href: 'https://github.com/arslan-mallah',           label: 'GitHub',   className: 'header__github'   },
-  { icon: faInstagram,href: 'https://www.instagram.com/arslan__mallah/profilecard/?igsh=dGJpenlnenp2bnJs', label: 'Instagram', className: 'header__instagram' },
+  { icon: faInstagram,href: 'https://www.instagram.com/arslan__mallah/', label: 'Instagram', className: 'header__instagram' },
 ];
 
 const Header = () => {
